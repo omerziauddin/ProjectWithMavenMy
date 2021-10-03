@@ -72,6 +72,21 @@ public class MapDemo {
 		s.save(answer1);
 		s.save(answer2);
 		
+		
+		
+		//fetch 
+		
+		
+		 
+		 
+		Question q=(Question)s.get(Question.class,1212);
+		System.out.println(q.getQuestion());
+		
+		for(Answer a : q.getAnswers())
+		{
+			System.out.println(a.getAnswer());
+		}
+		
 		//commit tx
 		
 		tx.commit();

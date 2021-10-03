@@ -3,6 +3,7 @@ package com.map;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity
@@ -16,6 +17,7 @@ public class Answer {
 
 	// many answers will have 1 question
 	@ManyToOne
+	@JoinColumn(name="q_id")
 	private Question question;
 
 	public int getAnswerId() {

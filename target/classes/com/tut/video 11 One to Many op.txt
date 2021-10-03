@@ -1,70 +1,16 @@
-select * from Question;
+ select * from answer;
++-----------+---------------------------------------+------+
+| answer_id | answer                                | q_id |
++-----------+---------------------------------------+------+
+|        33 | with help of java we create softwares | 1212 |
+|       343 | Java is programming language          | 1212 |
+|       363 | java has diff frameworks              | 1212 |
++-----------+---------------------------------------+------+
+3 rows in set (0.00 sec)
+
+mysql> select * from question;
 +-------------+---------------+
 | question_id | question      |
 +-------------+---------------+
 |        1212 | What is java? |
 +-------------+---------------+
-1 row in set (0.00 sec)
-
-mysql> select * from Answer;
-+-----------+---------------------------------------+----------------------+
-| answer_id | answer                                | question_question_id |
-+-----------+---------------------------------------+----------------------+
-|        33 | with help of java we create softwares |                 1212 |
-|       343 | Java is programming language          |                 1212 |
-|       363 | java has diff frameworks              |                 1212 |
-+-----------+---------------------------------------+----------------------+
-
-
-
--------------------+
-| Tables_in_myhiber |
-+-------------------+
-| answer            |
-| question          |
-| question_answer   |
-| student           |
-| student_address   |
-+-------------------+
-5 rows in set (0.01 sec)
-
-mysql> select * from question_answer;
-+----------------------+-------------------+
-| Question_question_id | answers_answer_id |
-+----------------------+-------------------+
-|                 1212 |                33 |
-|                 1212 |               343 |
-|                 1212 |               363 |
-+----------------------+-------------------+
-
-
-Hibernate: alter table Question_Answer drop foreign key FKjqes136u88wmj7sa663j69tk2
-Hibernate: alter table Question_Answer drop foreign key FKnfntbvy1ra0k0ty8dagg1g2r6
-Hibernate: drop table if exists Answer
-Hibernate: drop table if exists Question
-Hibernate: drop table if exists Question_Answer
-Hibernate: drop table if exists Student
-Hibernate: drop table if exists student_address
-Hibernate: create table Answer (answer_id integer not null, answer varchar(255), question_question_id integer, primary key (answer_id)) engine=InnoDB
-Oct 03, 2021 9:02:02 PM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
-INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@6435fa1c] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
-Hibernate: create table Question (question_id integer not null, question varchar(255), primary key (question_id)) engine=InnoDB
-Hibernate: create table Question_Answer (Question_question_id integer not null, answers_answer_id integer not null) engine=InnoDB
-Hibernate: create table Student (id integer not null, course varchar(255), duration varchar(255), city varchar(255), name varchar(255), primary key (id)) engine=InnoDB
-Hibernate: create table student_address (address_id integer not null auto_increment, added_date date, CITY varchar(100), image longblob, is_open bit, STREET varchar(50), primary key (address_id)) engine=InnoDB
-Hibernate: alter table Question_Answer add constraint UK_2ka6gbl9caaq3i3qfyxh64oha unique (answers_answer_id)
-Hibernate: alter table Answer add constraint FK8yiifgngf37mxn437tqdab3rg foreign key (question_question_id) references Question (question_id)
-Hibernate: alter table Question_Answer add constraint FKjqes136u88wmj7sa663j69tk2 foreign key (answers_answer_id) references Answer (answer_id)
-Hibernate: alter table Question_Answer add constraint FKnfntbvy1ra0k0ty8dagg1g2r6 foreign key (Question_question_id) references Question (question_id)
-Oct 03, 2021 9:02:02 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
-INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-Hibernate: insert into Question (question, question_id) values (?, ?)
-Hibernate: insert into Answer (answer, question_question_id, answer_id) values (?, ?, ?)
-Hibernate: insert into Answer (answer, question_question_id, answer_id) values (?, ?, ?)
-Hibernate: insert into Answer (answer, question_question_id, answer_id) values (?, ?, ?)
-Hibernate: insert into Question_Answer (Question_question_id, answers_answer_id) values (?, ?)
-Hibernate: insert into Question_Answer (Question_question_id, answers_answer_id) values (?, ?)
-Hibernate: insert into Question_Answer (Question_question_id, answers_answer_id) values (?, ?)
-What is java?
-Oct 03, 2021 9:02:02 PM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
-INFO: HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/myhiber]

@@ -1,6 +1,5 @@
 package com.map;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -17,9 +16,11 @@ public class Question {
 
 	private String question;
 
-	// one Question can have many answers
-	@OneToMany
-	private List<Answer> answers = new ArrayList<Answer>();
+	// one Question can have many answers drop 3rd table created in last branch else errors
+	//join column ka kaam mappedBy laga ke Question table se cheen liya gaya h aur Answer table 
+	//k question object ko de diya gya h join column will only be created in Answer table
+	@OneToMany(mappedBy="question")
+	private List<Answer> answers;
 
 	public Question(int questionId, String question, List<Answer> answers) {
 		super();
@@ -30,7 +31,7 @@ public class Question {
 
 	public Question() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	public int getQuestionId() {

@@ -19,7 +19,7 @@ public class Question {
 
 	// one Question can have many answers
 	@OneToMany
-	private List<Answer> answers = new ArrayList<Answer>();
+	private List<Answer> answers;
 
 	public Question(int questionId, String question, List<Answer> answers) {
 		super();

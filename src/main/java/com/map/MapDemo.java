@@ -63,8 +63,10 @@ public class MapDemo {
 		//commit tx
 		
 		tx.commit();
-		
-		
+		//fetching
+        Question newQ=(Question)s.get(Question.class, 1212);
+        System.out.println(newQ.getQuestion());
+        System.out.println(newQ.getAnswer().getAnswer());
 		
 		s.close();
 		factory.close();

@@ -17,8 +17,11 @@ public class Answer {
 
 	// for every answer we will take out from db we will also get the question of
 	// that answer
-	@OneToOne
-	@JoinColumn(name = "q_id")
+	// saari mapping ka dhyan answer rakhega
+	// The field that owns the relationship. Thiselement
+	// is only specified on the inverse (non-owning)side of the association.
+
+	@OneToOne(mappedBy = "answer")
 	private Question question;
 
 	public int getAnswerId() {

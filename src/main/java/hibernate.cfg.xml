@@ -6,11 +6,9 @@ Could not locate cfg.xml resource [hibernate.cfg.xml]
 solution The hibernate.cfg.xml file should be moved to src folder.
 or put full path in cfg.configure com/tut/hibernate.cfg.xml if file is in com.tut 
 package-->
-<hibernate-configuration>
-    <!-- in our program we will create session factory object.  session-factory is an interface ,
-    factory for providing session-->
-	<session-factory>
 
+<hibernate-configuration>
+ <session-factory>
 		<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
 		<property name="connection.url">jdbc:mysql://localhost:3306/myhiber</property>
 		<property name="connection.username">root</property>

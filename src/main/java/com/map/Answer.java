@@ -3,8 +3,7 @@ package com.map;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Answer {
@@ -15,13 +14,8 @@ public class Answer {
 
 	private String answer;
 
-	// for every answer we will take out from db we will also get the question of
-	// that answer
-	// saari mapping ka dhyan answer rakhega
-	// The field that owns the relationship. Thiselement
-	// is only specified on the inverse (non-owning)side of the association.
-
-	@OneToOne(mappedBy = "answer")
+	// many answers will have 1 question
+	@ManyToOne
 	private Question question;
 
 	public int getAnswerId() {

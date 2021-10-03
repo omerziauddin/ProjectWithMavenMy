@@ -1,0 +1,85 @@
+ show tables;
++-------------------+
+| Tables_in_myhiber |
++-------------------+
+|            |
+| emp               |
+| emp_learn_3rd_table|
+| project           |
+
+
+
+select * from emp;
++-----+-------+
+| eid | name  |
++-----+-------+
+|  34 | Ram   |
+|  35 | Shyam |
++-----+-------+
+
+
+
+ select * from project;
++-------+---------------------------+
+| pid   | project_name              |
++-------+---------------------------+
+| 12121 | Library management System |
+| 14214 | Chatbot                   |
++-------+---------------------------+
+
+
+ select * from emp_learn_3rd_table;
++-----+-------+
+| eid | pid   |
++-----+-------+
+|  34 | 12121 |
+|  34 | 14214 |
++-----+-------+
+doubt one row sholud b more ??
+35      14214
++----------+--------------+
+ek emp k pass 
+
+
+
+
+
+
+
+
+
+INFO: HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+Hibernate: alter table Answer drop foreign key FKdyuhr486a90ac2wuuw4m0782t
+Oct 04, 2021 1:02:20 AM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4a50d04a] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: alter table emp_learn_3rd_table drop foreign key FKc3xth3s46x5nq8lnb1o81f1hw
+Hibernate: alter table emp_learn_3rd_table drop foreign key FK619bvygg01bhen0m0k3994gea
+Hibernate: drop table if exists Answer
+Hibernate: drop table if exists Emp
+Hibernate: drop table if exists emp_learn_3rd_table
+Hibernate: drop table if exists Project
+Hibernate: drop table if exists Question
+Hibernate: drop table if exists Student
+Hibernate: drop table if exists student_address
+Hibernate: create table Answer (answer_id integer not null, answer varchar(255), q_id integer, primary key (answer_id)) engine=InnoDB
+Oct 04, 2021 1:02:20 AM org.hibernate.resource.transaction.backend.jdbc.internal.DdlTransactionIsolatorNonJtaImpl getIsolatedConnection
+INFO: HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@1da1380b] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+Hibernate: create table Emp (eid integer not null, name varchar(255), primary key (eid)) engine=InnoDB
+Hibernate: create table emp_learn_3rd_table (eid integer not null, pid integer not null) engine=InnoDB
+Hibernate: create table Project (pid integer not null, project_name varchar(255), primary key (pid)) engine=InnoDB
+Hibernate: create table Question (question_id integer not null, question varchar(255), primary key (question_id)) engine=InnoDB
+Hibernate: create table Student (id integer not null, course varchar(255), duration varchar(255), city varchar(255), name varchar(255), primary key (id)) engine=InnoDB
+Hibernate: create table student_address (address_id integer not null auto_increment, added_date date, CITY varchar(100), image longblob, is_open bit, STREET varchar(50), primary key (address_id)) engine=InnoDB
+Hibernate: alter table Answer add constraint FKdyuhr486a90ac2wuuw4m0782t foreign key (q_id) references Question (question_id)
+Hibernate: alter table emp_learn_3rd_table add constraint FKc3xth3s46x5nq8lnb1o81f1hw foreign key (pid) references Project (pid)
+Hibernate: alter table emp_learn_3rd_table add constraint FK619bvygg01bhen0m0k3994gea foreign key (eid) references Emp (eid)
+Oct 04, 2021 1:02:21 AM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: insert into Emp (name, eid) values (?, ?)
+Hibernate: insert into Emp (name, eid) values (?, ?)
+Hibernate: insert into Project (project_name, pid) values (?, ?)
+Hibernate: insert into Project (project_name, pid) values (?, ?)
+Hibernate: insert into emp_learn_3rd_table (eid, pid) values (?, ?)
+Hibernate: insert into emp_learn_3rd_table (eid, pid) values (?, ?)
+Oct 04, 2021 1:02:21 AM org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl$PoolState stop
+INFO: HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/myhiber]

@@ -12,3 +12,15 @@ Hibernate:
         and student0_.name=?
 peter course= hibernate
 peter course= android
+
+
+
+db data student table first save it in db else error
+
+------+-----------------------+----------+---------+-------+
+| id   | course                | duration | city    | name  |
++------+-----------------------+----------+---------+-------+
+| 1234 | hibernate             | 1 month  | Lucknow | peter |
+| 1241 | android               | 2 month  | Lucknow | peter |
+| 1414 | Java Hibernate Course | 2 month  | ABC     | John  |
++------+-----------------------+----------+---------+-------+

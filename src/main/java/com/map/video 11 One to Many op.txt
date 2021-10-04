@@ -1,13 +1,21 @@
-
-o/p me hibernate queries fired
 Hibernate: 
     select
         question0_.question_id as question1_4_0_,
-        question0_.question as question2_4_0_ 
+        question0_.question as question2_4_0_,
+        answers1_.q_id as q_id3_0_1_,
+        answers1_.answer_id as answer_i1_0_1_,
+        answers1_.answer_id as answer_i1_0_2_,
+        answers1_.answer as answer2_0_2_,
+        answers1_.q_id as q_id3_0_2_ 
     from
         Question question0_ 
+    left outer join
+        Answer answers1_ 
+            on question0_.question_id=answers1_.q_id 
     where
         question0_.question_id=?
         
         
-        answer is not loaded as it is not called
+        
+        answer is loaded even if it is not called along with other attributes of question
+        

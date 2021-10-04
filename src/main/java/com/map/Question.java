@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
@@ -19,7 +20,8 @@ public class Question {
 	// one Question can have many answers drop 3rd table created in last branch else errors
 	//join column ka kaam mappedBy laga ke Question table se cheen liya gaya h aur Answer table 
 	//k question object ko de diya gya h join column will only be created in Answer table
-	@OneToMany(mappedBy="question")
+	
+	@OneToMany(mappedBy="question",fetch = FetchType.LAZY)
 	private List<Answer> answers;
 
 	public Question(int questionId, String question, List<Answer> answers) {

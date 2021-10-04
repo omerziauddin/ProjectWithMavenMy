@@ -82,7 +82,7 @@ public class MapDemo {
 		Question q=(Question)s.get(Question.class,1212);// default is lazy loading ie 
 		//System.out.println(q.getQuestionId());
 		//System.out.println(q.getQuestion());
-		System.out.println(q.getAnswers().size());// now answers will be loaded
+		//System.out.println(q.getAnswers().size());// now answers will be loaded
 //		
 //		for(Answer a : q.getAnswers())
 //		{

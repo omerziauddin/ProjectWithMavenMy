@@ -1,0 +1,18 @@
+Hibernate: 
+    insert 
+    into
+        Student
+        (course, duration, city, name, id) 
+    values
+        (?, ?, ?, ?, ?)
+Hibernate: 
+    update
+        Student 
+    set
+        course=?,
+        duration=?,
+        city=?,
+        name=? 
+    where
+        id=?
+Student [id=1414, name=Sachin, city=ABC]

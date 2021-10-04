@@ -16,6 +16,6 @@ Hibernate:
         question0_.question_id=?
         
         
-        
+     left p question table hogi yani question ka sara data ayga aur anwer ka mathing data   
         answer is loaded even if it is not called along with other attributes of question
         

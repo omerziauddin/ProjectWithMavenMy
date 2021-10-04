@@ -1,5 +1,6 @@
 package com.hql;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -55,17 +56,41 @@ public static void main(String[] args) {
 //	
 //	System.out.println("Deleted");
 //	System.out.println(r);
+//	
+//	//update query
+//	Query q2=s.createQuery("update Student set city=: c where name=: n");
+//	//Student is entity class ie persistant class and city name are variables of this class
+//	q2.setParameter("c","Delhi");
+//	q2.setParameter("n", "Peter");
+//	int r=q2.executeUpdate();
+//	
+//	System.out.println(r+" objects updated");
 	
-	//update query
-	Query q2=s.createQuery("update Student set city=: c where name=: n");
-	//Student is entity class ie persistant class and city name are variables of this class
-	q2.setParameter("c","Delhi");
-	q2.setParameter("n", "Peter");
-	int r=q2.executeUpdate();
 	
-	System.out.println(r+" objects updated");
-		
 	
+	//ek question se saare answer nikalna chah rahe hain not through single object but through joining
+	//Question and Answer table
+	
+	
+	//how to execute join query      
+	//Question INNER JOIN Question.answer
+	
+	Query q3=s.createQuery("select q.question , q.questionId, a.answer from Question as q INNER JOIN q.answers as a");
+	//Query q3=s.createQuery("select Question.question , Question.questionId, Answer.answer from Question INNER JOIN Question.answers");;
+	
+	// q=alias name for Question class
+	//a=alias name for Answer class
+	//above statement will join Question ( with answer as join column ) from Answer class
+	//Question class ko Question class ki jo answers variable ki class h yani Answer u class se join karna h 
+	
+	List<Object[]> list3 =q3.getResultList();
+	//Object[question,questionId,answer of this question]==>isi tara har question ki object array hogi jo saare question ki object array milke ek list banayge
+	//matlab list k 0 p first Question ki details second p second and third p third Question ki details
+	
+	for(Object[] arr: list3)
+	{
+		System.out.println(Arrays.toString(arr));
+	}
 	
 	tx.commit();
 	

@@ -1,28 +1,51 @@
+The INNER JOIN keyword selects records that have matching values in both tables.
 
+ex 
+ SELECT column_name(s)
+FROM table1
+INNER JOIN table2
+ON table1.column_name = table2.column_name;
 
+SELECT Question.question, Question.questionId
+FROM Question
+INNER JOIN Question.answer
 
-
--------------------------------------------------------------------
+-
+output -------------------------------------------------------------------
 Hibernate: 
-    update
-        Student 
-    set
-        city=? 
-    where
-        name=?
-2objects updated
+    select
+        question0_.question as col_0_0_,
+        question0_.question_id as col_1_0_,
+        answers1_.answer as col_2_0_ 
+    from
+        Question question0_ 
+    inner join
+        Answer answers1_ 
+            on question0_.question_id=answers1_.q_id
+[What is java?, 1212, with help of java we create softwares]
+[What is java?, 1212, Java is programming language]
+[What is java?, 1212, java has diff frameworks]
+
+
+ select * from Question;
++-------------+---------------+
+| question_id | question      |
++-------------+---------------+
+|        1212 | What is java? |
++-------------+---------------+
+1 row in set (0.01 sec)
+
+mysql> Select * from Answer;
++-----------+---------------------------------------+------+
+| answer_id | answer                                | q_id |
++-----------+---------------------------------------+------+
+|        33 | with help of java we create softwares | 1212 |
+|       343 | Java is programming language          | 1212 |
+|       363 | java has diff frameworks              | 1212 |
++-----------+---------------------------------------+------+
 
 
 
 
 
 
-
-
-
-+------+-----------+----------+-------+-------+
-| id   | course    | duration | city  | name  |
-+------+-----------+----------+-------+-------+
-| 1234 | hibernate | 1 month  | Delhi | peter |
-| 1241 | android   | 2 month  | Delhi | peter |
-+------+-----------+----------+-------+-------+

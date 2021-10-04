@@ -19,12 +19,14 @@ package-->
 		i want hibernate automatically create table and we do not have to do that we only telll mapping of classes anto tables
 		rest hibernate do us hbm2ddl it contains crud update command only create table if its not in db for testing use create-->
 		
-		<property name="hbm2ddl.auto">create</property>   <!-- if we r not using this property 
+		<property name="hbm2ddl.auto">update</property>   <!-- if we r not using this property 
 		then we hv to manually create tables in db if create previous table delete and new created
 		everytime-->
 		
 		<!-- hibernate will show ehich query it is firing in db from below command -->
 		<property name="show_sql">true</property>
+		
+		<property name="format_sql">true</property>
 		
         <!-- to tell hibernate to map class Student to table student no of mapping
         tags are equal to no of entity class-->

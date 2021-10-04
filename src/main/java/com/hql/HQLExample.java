@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 
@@ -38,6 +39,21 @@ public static void main(String[] args) {
 	{
 		System.out.println(student.getName()+" course= "+student.getCerti().getCourse());
 	}
+	
+	
+	System.out.println("-------------------------------------------------------------------");
+	Transaction tx=s.beginTransaction();
+	//using alias s not necessary 
+	Query q2=s.createQuery("delete from Student as s where s.city=: c");
+	
+	//firing Query
+	q2.setParameter("c", "ABC");
+	int r=q2.executeUpdate();//  if not begining Transaction then  javax.persistence.TransactionRequiredException
+	
+	System.out.println("Deleted");
+	System.out.println(r);
+	
+	tx.commit();
 	
 	s.clear();
 	factory.close();

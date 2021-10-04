@@ -12,3 +12,12 @@ Hibernate:
         and student0_.name=?
 peter course= hibernate
 peter course= android
+-------------------------------------------------------------------
+Hibernate: 
+    delete 
+    from
+        Student 
+    where
+        city=?
+Deleted
+1

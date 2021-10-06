@@ -18,7 +18,7 @@ public class Answer {
 	// many answers will have 1 question
 	@ManyToOne
 	@JoinColumn(name="q_id")
-	private Question question;
+	private Question question;//join column will be made on this due mappedBy used in Question class
 
 	public int getAnswerId() {
 		return answerId;

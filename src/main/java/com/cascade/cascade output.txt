@@ -1,0 +1,58 @@
+Hibernate: 
+    select
+        answer_.answer_id,
+        answer_.answer as answer2_0_,
+        answer_.q_id as q_id3_0_ 
+    from
+        Answer answer_ 
+    where
+        answer_.answer_id=?
+Hibernate: 
+    select
+        answer_.answer_id,
+        answer_.answer as answer2_0_,
+        answer_.q_id as q_id3_0_ 
+    from
+        Answer answer_ 
+    where
+        answer_.answer_id=?
+Hibernate: 
+    select
+        answer_.answer_id,
+        answer_.answer as answer2_0_,
+        answer_.q_id as q_id3_0_ 
+    from
+        Answer answer_ 
+    where
+        answer_.answer_id=?
+Hibernate: 
+    insert 
+    into
+        Question
+        (question, question_id) 
+    values
+        (?, ?)
+Hibernate: 
+    update
+        Answer 
+    set
+        answer=?,
+        q_id=? 
+    where
+        answer_id=?
+Hibernate: 
+    update
+        Answer 
+    set
+        answer=?,
+        q_id=? 
+    where
+        answer_id=?
+Hibernate: 
+    update
+        Answer 
+    set
+        answer=?,
+        q_id=? 
+    where
+        answer_id=?

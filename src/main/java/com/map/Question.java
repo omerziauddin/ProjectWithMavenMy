@@ -2,6 +2,7 @@ package com.map;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -21,7 +22,7 @@ public class Question {
 	//join column ka kaam mappedBy laga ke Question table se cheen liya gaya h aur Answer table 
 	//k question object ko de diya gya h join column will only be created in Answer table
 	
-	@OneToMany(mappedBy="question",fetch = FetchType.EAGER)
+	@OneToMany(mappedBy="question",fetch = FetchType.EAGER,cascade=CascadeType.ALL)
 	private List<Answer> answers;
 
 	public Question(int questionId, String question, List<Answer> answers) {

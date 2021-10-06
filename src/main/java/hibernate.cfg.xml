@@ -28,6 +28,11 @@ package-->
 		
 		<property name="format_sql">true</property>
 		
+		
+		<!-- for hibernate second level caching -->
+		<property name="cache.use_second_level_cache">true</property>
+		<property name="cache.region.factory_class">org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+        
         <!-- to tell hibernate to map class Student to table student no of mapping
         tags are equal to no of entity class-->
         <mapping class="com.tut.Student"/>

@@ -29,6 +29,20 @@
 			<version>8.0.26</version>
 		</dependency>
 
+
+		<!-- for second level caching -->
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>2.10.6</version>
+		</dependency>
+		<!-- hibernate-ehcache for second level caching download accor ding your hibernate v here is 5.4.5.Final -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-ehcache</artifactId>
+			<version>5.4.5.Final</version>
+		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>

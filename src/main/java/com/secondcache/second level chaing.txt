@@ -1,0 +1,34 @@
+download 2 dependencies for second level caching
+   1-  ehcache maven
+   2-  hibernate ehcache maven(its version must be same as your hibernate version see in pom
+   3-  add two properties in hiberncate cfg file
+       <property name="cache.use_second_level_cache">true</property>
+		<property name="org.hibernate.cache.ehcache.internal.EhcacheRegionFactory</property>
+        
+   4- use these annotations on entity class which u want to enable second level caching
+     here its student class 
+     @Cacheable
+     @Cache(usage = CacheConcurrencyStrategy.READ_ONLY)
+     
+     read only is for reading operations
+     
+    output
+    
+    Hibernate: 
+    select
+        student0_.id as id1_5_0_,
+        student0_.course as course2_5_0_,
+        student0_.duration as duration3_5_0_,
+        student0_.city as city4_5_0_,
+        student0_.name as name5_5_0_ 
+    from
+        Student student0_ 
+    where
+        student0_.id=?
+Student [id=1234, name=peter, city=Delhi]
+Student [id=1234, name=peter, city=Delhi]
+
+
+query will not be fired by hibernate as data is taken from second level cache
+only one query fired not two but we executed 2 queries for same object even after closing
+sessions we r able to get object as its coming from second level cache memory

@@ -1,10 +1,16 @@
 package com.tut;
 
+import javax.persistence.Cacheable;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+
 @Entity//(name="student_details") to name table in db or use 
 //@Table(name="student_details")
+@Cacheable
+@Cache(usage = CacheConcurrencyStrategy.READ_ONLY)//both to enable second level caching
 public class Student {
     //make id as primary key
 	@Id

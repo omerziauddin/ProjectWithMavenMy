@@ -1,0 +1,14 @@
+Hibernate: 
+    select
+        student0_.id as id1_5_,
+        student0_.course as course2_5_,
+        student0_.duration as duration3_5_,
+        student0_.city as city4_5_,
+        student0_.name as name5_5_ 
+    from
+        Student student0_ limit ?
+        
+        
+        //it used limit for pagination 
+1234 :  peter : Delhi
+1241 :  peter : Delhi

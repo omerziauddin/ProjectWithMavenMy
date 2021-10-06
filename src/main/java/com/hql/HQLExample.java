@@ -75,7 +75,7 @@ public static void main(String[] args) {
 	//how to execute join query      
 	//Question INNER JOIN Question.answer
 	
-	Query q3=s.createQuery("select q.question , q.questionId, a.answer from Question as q INNER JOIN q.answers as a");
+	Query q3=s.createQuery("select q.question , q.questionId, a.answer from Question as q INNER JOIN q.answers as a");//join column is question class answer column
 	//Query q3=s.createQuery("select Question.question , Question.questionId, Answer.answer from Question INNER JOIN Question.answers");;
 	
 	// q=alias name for Question class

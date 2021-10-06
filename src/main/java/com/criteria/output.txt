@@ -1,0 +1,11 @@
+Hibernate: 
+    select
+        this_.id as id1_6_0_,
+        this_.course as course2_6_0_,
+        this_.duration as duration3_6_0_,
+        this_.city as city4_6_0_,
+        this_.name as name5_6_0_ 
+    from
+        Student this_
+Student [id=1234, name=peter, city=Delhi]
+Student [id=1241, name=peter, city=Delhi]

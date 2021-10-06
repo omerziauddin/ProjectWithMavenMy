@@ -41,6 +41,8 @@ package-->
         <mapping class="com.map.Answer"/>
         <mapping class="com.map1.Emp"/>
         <mapping class="com.map1.Project"/>
+        <!--mapping for xml file project xml mapping     use resource  -->
+        <mapping resource="com/mapping/xml/Person.hbm.xml" />
         
 	</session-factory>
 

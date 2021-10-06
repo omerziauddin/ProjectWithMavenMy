@@ -13,7 +13,7 @@ import com.tut.Student;
 
 public class HQLExample {
 public static void main(String[] args) {
-	
+	//agar config file hibernate ki kahi aur h to full path name likha jayga
 	Configuration cfg=new Configuration();
 	cfg.configure("hibernate.cfg.xml");
 	SessionFactory factory = cfg.buildSessionFactory();

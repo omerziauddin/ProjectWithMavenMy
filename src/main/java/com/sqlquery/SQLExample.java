@@ -14,7 +14,7 @@ public class SQLExample {
 
 	public static void main(String[] args) {
 		//making session factory
-		
+		//agar config file hibernate ki kahi aur h to full path name likha jayga
 	   SessionFactory factory=new Configuration().configure().buildSessionFactory();
 	   
 	   //factory se banayge session factory k pass ek method h opene session jo mujhe ek session de dega

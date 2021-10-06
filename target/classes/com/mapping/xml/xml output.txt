@@ -1,0 +1,42 @@
+  1- for each entity one xml file must created
+  2- name of xml file must be 
+          entity_name.hbm.xml   manner
+          here we are doing mapping of Person class from db table
+          hence Person.hbm.xml
+ 3-   after first line <?xml version="1.0" encoding="UTF-8"?>
+  type from net available
+  
+       this is known as DDT
+      <!DOCTYPE hibernate-mapping PUBLIC 
+      "-//Hibernate/Hibernate Mapping DTD//EN"
+      "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+      
+      
+      
+      output
+      
+      Hibernate: 
+    
+    create table person (
+       person_id integer not null auto_increment,
+        person_name varchar(255),
+        person_address varchar(255),
+        person_phone varchar(255),
+        primary key (person_id)
+    ) engine=InnoDB
+Oct 06, 2021 5:06:14 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+Hibernate: 
+    select
+        student0_.id as id1_6_0_,
+        student0_.course as course2_6_0_,
+        student0_.duration as duration3_6_0_,
+        student0_.city as city4_6_0_,
+        student0_.name as name5_6_0_ 
+    from
+        Student student0_ 
+    where
+        student0_.id=?
+Student [id=1234, name=peter, city=Delhi]
+Student [id=1234, name=peter, city=Delhi]
+      

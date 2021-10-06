@@ -12,7 +12,7 @@ import net.sf.ehcache.hibernate.EhCacheRegionFactory;
 public class SecondCacheExample {
 	public static void main(String[] args) {
 	
-
+		//agar config file hibernate ki kahi aur h to full path name likha jayga
 		//EhCacheRegionFactory import this to know location
 		SessionFactory factory = new Configuration().configure().buildSessionFactory();
 

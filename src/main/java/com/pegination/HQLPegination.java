@@ -13,7 +13,7 @@ public class HQLPegination {
           public static void main(String[] args)
        {
 	
-        	  
+        	//agar config file hibernate ki kahi aur h to full path name likha jayga
         	  SessionFactory factory=new Configuration().configure().buildSessionFactory();
         	  //pagination means kaha se start karna chahte ho kitne elements chahte ho jese 5 se shuru
         	  //karke 12 tak chahiye

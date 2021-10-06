@@ -19,7 +19,7 @@ public class StateDemo {
 		//Detached 
 		//Removed
 		System.out.println("Example :");
-		
+		//agar config file hibernate ki kahi aur h to full path name likha jayga
 		SessionFactory f=new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
 		
 		

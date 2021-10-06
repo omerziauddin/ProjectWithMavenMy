@@ -8,7 +8,7 @@ import org.hibernate.cfg.Configuration;
 public class EmDemo {
 
 	public static void main( String[] args )
-    {
+    {//agar config file hibernate ki kahi aur h to full path name likha jayga
 		Configuration cfg=new Configuration();
         cfg.configure("hibernate.cfg.xml");
         SessionFactory factory=cfg.buildSessionFactory();

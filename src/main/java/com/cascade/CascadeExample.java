@@ -15,6 +15,7 @@ public class CascadeExample {
 
 	public static void main(String[] args) {
 		//create sessionfactory
+		////agar config file hibernate ki kahi aur h to full path name likha jayga
 		SessionFactory factory=new Configuration().configure().buildSessionFactory();
 		
 		//create Session from factory openSession method as Session contains methods to save in db

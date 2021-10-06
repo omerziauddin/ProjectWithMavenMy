@@ -1,0 +1,67 @@
+
+
+
+Hibernate: 
+    select
+        this_.id as id1_6_0_,
+        this_.course as course2_6_0_,
+        this_.duration as duration3_6_0_,
+        this_.city as city4_6_0_,
+        this_.name as name5_6_0_ 
+    from
+        Student this_ 
+    where
+        this_.course=?
+Student [id=1235, name=jackson, city=lucknow]
+Student [id=1241, name=monty, city=Delhi]
+Student [id=12347, name=action, city=Delhi]
+Student [id=12356, name=anshu, city=lucknow]
+==========================================
+Hibernate: 
+    select
+        this_.id as id1_6_0_,
+        this_.course as course2_6_0_,
+        this_.duration as duration3_6_0_,
+        this_.city as city4_6_0_,
+        this_.name as name5_6_0_ 
+    from
+        Student this_ 
+    where
+        this_.id>?
+Oct 06, 2021 11:00:54 PM org.hibernate.internal.SessionImpl createCriteria
+WARN: HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+Oct 06, 2021 11:00:54 PM org.hibernate.internal.SessionImpl createCriteria
+WARN: HHH90000022: Hibernate's legacy org.hibernate.Criteria API is deprecated; use the JPA javax.persistence.criteria.CriteriaQuery instead
+Student [id=12347, name=action, city=Delhi]
+Student [id=12356, name=anshu, city=lucknow]
+==========================================
+Hibernate: 
+    select
+        this_.id as id1_6_0_,
+        this_.course as course2_6_0_,
+        this_.duration as duration3_6_0_,
+        this_.city as city4_6_0_,
+        this_.name as name5_6_0_ 
+    from
+        Student this_ 
+    where
+        this_.id>? 
+        and this_.course=?
+Student [id=12347, name=action, city=Delhi]
+Student [id=12356, name=anshu, city=lucknow]
+==========================================
+Hibernate: 
+    select
+        this_.id as id1_6_0_,
+        this_.course as course2_6_0_,
+        this_.duration as duration3_6_0_,
+        this_.city as city4_6_0_,
+        this_.name as name5_6_0_ 
+    from
+        Student this_ 
+    where
+        this_.duration is not null 
+        and this_.course like ?
+Student [id=1235, name=jackson, city=lucknow]
+Student [id=1241, name=monty, city=Delhi]
+Student [id=12356, name=anshu, city=lucknow]

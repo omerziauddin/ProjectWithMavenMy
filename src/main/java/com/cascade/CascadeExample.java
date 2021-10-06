@@ -65,6 +65,9 @@ public class CascadeExample {
 		tx.commit(); 
 		s.close();
 		factory.close();
+		
+		
+		
 
 	}
 

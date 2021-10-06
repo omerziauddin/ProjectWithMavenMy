@@ -1,0 +1,71 @@
+
+Hibernate: 
+    Select
+        * 
+    from
+        student
+peter : Delhi
+peter : Delhi
+
+=========================================================
+
+
+Line 31 
+if taking this then RE 
+//getting data
+	  List<Student> list=nq.list(); //nq.getResultList() can also be used
+	  
+	  for(Student student : list)
+	  {
+		  System.out.println(student.getName()+" :  "+student.getCity());
+		  
+	  }
+	  
+	RE 
+	  Hibernate: 
+    Select
+        * 
+    from
+        student
+Exception in thread "main" java.lang.ClassCastException: class [Ljava.lang.Object; cannot be cast to class com.tut.Student ([Ljava.lang.Object; is in module java.base of loader 'bootstrap'; com.tut.Student is in unnamed module of loader 'app')
+	at com.sqlquery.SQLExample.main(SQLExample.java:34)
+	
+	
+	
+	Explain 
+	nq. list ne table ka data nikala h naki class ka bs its SQL not HQL HQL nikalta h class ka
+	data SQL nikalta h Table ka data isi liye nq.list ise Object[] me ek row ka data store karata ha
+	Object[0]--->first column of table Object[1]----->second column of student and so on
+	
+	ab har row k liye ek object[] hoig jitni rows hongi utni Object[] hobgi isliye in Object[] ko list of Object[] me dalna padega
+	
+	
+	
+	
+	since output of nq.list is Object[] and which we have to store in List of Object[]
+	Data is coming in the form of 2D array
+========================================================================================	
+	output of progrram
+	
+	
+	if taken 
+	for(Object[] student : list)
+	  {
+		  System.out.println(Arrays.deepToString(student));
+		  
+	  }
+	 Hibernate: 
+    Select
+        * 
+    from
+        student
+[1234, hibernate, 1 month, Delhi, peter]
+[1241, android, 2 month, Delhi, peter]
+
+
+
+
+
+
+ 
+	  

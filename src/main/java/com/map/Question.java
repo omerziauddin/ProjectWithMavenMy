@@ -22,6 +22,11 @@ public class Question {
 	//join column ka kaam mappedBy laga ke Question table se cheen liya gaya h aur Answer table 
 	//k question object ko de diya gya h join column will only be created in Answer table
 	
+	@Override
+	public String toString() {
+		return "Question [questionId=" + questionId + ", question=" + question /* + ", answers=" + answers + "]" */;
+	}
+
 	@OneToMany(mappedBy="question",fetch = FetchType.EAGER,cascade=CascadeType.ALL)
 	private List<Answer> answers;
 

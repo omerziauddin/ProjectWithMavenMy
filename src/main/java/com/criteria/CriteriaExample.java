@@ -75,7 +75,7 @@ public class CriteriaExample {
 		c3.add(Restrictions.isNotNull("certi.duration"));
 		
 		c3.add(Restrictions.like("certi.course","And%" ));
-		
+       // c3.add(Restrictions.in(null, student3));
 		List<Student> student4=c3.list();
 		
 		for(Student st : student4)

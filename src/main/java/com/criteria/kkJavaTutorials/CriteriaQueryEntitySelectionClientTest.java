@@ -20,8 +20,8 @@ public class CriteriaQueryEntitySelectionClientTest {
 			
 			
 			
-			CriteriaQuery<Employee> criteriaQuery = builder.createQuery(Employee.class);//using this buider instance 
-			//we call create query telling that I want employee instance as output
+			CriteriaQuery<String> criteriaQuery = builder.createQuery(String.class);//using this buider instance 
+			//we call create query telling that I want String instance as output
 			
 			
 			
@@ -29,29 +29,27 @@ public class CriteriaQueryEntitySelectionClientTest {
 			//class root means Employee table is not related to any other table now we get root object
 			
 			
-			criteriaQuery.select(root);//select all
+			criteriaQuery.select(root.get("employeeName"));//select only all employee names from db
 
 			//criteriaQuery.where(builder.equal(root.get("employeeId"), 2)); specific data will be selected
 
-			Query<Employee> query = session.createQuery(criteriaQuery);//creating Query 
-			List<Employee> empList = query.list();
-			empList.forEach(System.out::println);
+			Query<String> createQuery = session.createQuery(criteriaQuery);//creating Query 
+			List<String> empName = createQuery.getResultList();
+			empName.forEach(System.out::println);
 		} catch (HibernateException e) {
 			e.printStackTrace();
 		}
 
 	}
+//	output
+//	Hibernate: 
+//	    select
+//	        employee0_.employee_name as col_0_0_    -->> employee0_ is alias name to employye table col_0_0_ is alias of
+//                                                     column name employee_name
+//	    from
+//	        employee_table employee0_
+//	Martin Bingel
+//	Sean Murphy
+
 
 }
-//output 
-//Hibernate: 
-//    select
-//        employee0_.employee_id as employee1_3_,
-//        employee0_.date_of_joing as date_of_2_3_,
-//        employee0_.email as email3_3_,
-//        employee0_.employee_name as employee4_3_,
-//        employee0_.salary as salary5_3_ 
-//    from
-//        employee_table employee0_
-//Employee [employeeId=1, employeeName=Martin Bingel, email=martin.cs2017@gmail.com, doj=2021-10-17 16:04:19.325, salary=50000.0]
-//Employee [employeeId=2, employeeName=Sean Murphy, email=sean.m2017@gmail.com, doj=2021-10-17 16:04:19.325, salary=90000.0]

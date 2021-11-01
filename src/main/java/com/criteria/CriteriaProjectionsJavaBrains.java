@@ -19,6 +19,19 @@ public class CriteriaProjectionsJavaBrains {
 		session.beginTransaction();
 
 		Criteria criteria = session.createCriteria(Student.class);
+		
+		
+		/*ProjectionList projectionList=Projections.projectionList();
+		
+		projectionList.add(Projections.property("id"))
+		              .add(Projections.property("course"))
+		              .add(Projections.property("duration"));
+		
+		
+		criteria.add(Restrictions.eq("course", "Android"))
+		       .add(Restrictions.eq("city", "lucknow"));
+		
+		criteria.setProjection(projectionList);*/
 
 		criteria.setProjection(Projections.property("id"));// it will return list of Integer
 
